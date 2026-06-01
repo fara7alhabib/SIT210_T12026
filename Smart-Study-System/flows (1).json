@@ -1,0 +1,799 @@
+[
+    {
+        "id": "4c59e0a7bb62b38b",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2492cda88bf1f9b6",
+        "type": "mqtt in",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "topic": "study/motion",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "90a3fcfe5dc19ac6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 220,
+        "wires": [
+            [
+                "9c6089bcaeb0dc25",
+                "535b5eeffe1f339e",
+                "059f585aac749cc1"
+            ]
+        ]
+    },
+    {
+        "id": "9c6089bcaeb0dc25",
+        "type": "debug",
+        "z": "4c59e0a7bb62b38b",
+        "name": "debug ",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 310,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f6315c1b1c6ae5eb",
+        "type": "mqtt in",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "topic": "study/alert",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "90a3fcfe5dc19ac6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 520,
+        "y": 700,
+        "wires": [
+            [
+                "a4c2873a325c6b24",
+                "c753aef94a6ab953"
+            ]
+        ]
+    },
+    {
+        "id": "a4c2873a325c6b24",
+        "type": "debug",
+        "z": "4c59e0a7bb62b38b",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "a7341a0026d13d50",
+        "type": "mqtt in",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "topic": "study/light",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "90a3fcfe5dc19ac6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 500,
+        "y": 800,
+        "wires": [
+            [
+                "67d74d5aa316ea3b"
+            ]
+        ]
+    },
+    {
+        "id": "67d74d5aa316ea3b",
+        "type": "debug",
+        "z": "4c59e0a7bb62b38b",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "9bef6b401a2c0b8e",
+        "type": "ui_text",
+        "z": "4c59e0a7bb62b38b",
+        "group": "5aafaad48c469381",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "focus status",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Tahoma,Geneva,sans-serif",
+        "fontSize": 16,
+        "color": "#2c69ba",
+        "x": 330,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "c753aef94a6ab953",
+        "type": "ui_text",
+        "z": "4c59e0a7bb62b38b",
+        "group": "5aafaad48c469381",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "alert status",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#ce3b3b",
+        "x": 810,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "aba7bbee8c29859a",
+        "type": "ui_chart",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "group": "8adb86f791382ae7",
+        "order": 1,
+        "width": "4",
+        "height": "5",
+        "label": "focus history",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#677a1f",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 490,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9dea94a29f47cb93",
+        "type": "mqtt out",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "topic": "study/mode",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "90a3fcfe5dc19ac6",
+        "x": 730,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b3fb4a0c6ca30ca3",
+        "type": "ui_button",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "group": "a1f5e460c4818b5c",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": " Stop Study",
+        "tooltip": "",
+        "color": "red",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "STOP",
+        "payloadType": "str",
+        "topic": " study/mode",
+        "topicType": "str",
+        "x": 530,
+        "y": 340,
+        "wires": [
+            [
+                "9dea94a29f47cb93"
+            ]
+        ]
+    },
+    {
+        "id": "8b2d1163e4d355fb",
+        "type": "function",
+        "z": "4c59e0a7bb62b38b",
+        "name": "function 3",
+        "func": "flow.set(\"plannedStudyTime\", msg.payload);\n\nmsg.payload = msg.payload + \" min\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 480,
+        "wires": [
+            [
+                "3908ab19c248673b"
+            ]
+        ]
+    },
+    {
+        "id": "497886c7663ab101",
+        "type": "ui_numeric",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "label": "Study Time",
+        "tooltip": "",
+        "group": "a1f5e460c4818b5c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "1",
+        "max": 10,
+        "step": "",
+        "className": "",
+        "x": 590,
+        "y": 480,
+        "wires": [
+            [
+                "8b2d1163e4d355fb"
+            ]
+        ]
+    },
+    {
+        "id": "34fa13ece1d135f4",
+        "type": "function",
+        "z": "4c59e0a7bb62b38b",
+        "name": "function 4",
+        "func": "flow.set(\"currentUnit\", msg.payload);\nmsg.payload = msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 440,
+        "wires": [
+            [
+                "2241416e5e08339c"
+            ]
+        ]
+    },
+    {
+        "id": "5e3a26e956f4b8e4",
+        "type": "ui_text_input",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "label": "Unit Name",
+        "tooltip": "",
+        "group": "a1f5e460c4818b5c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 590,
+        "y": 440,
+        "wires": [
+            [
+                "34fa13ece1d135f4"
+            ]
+        ]
+    },
+    {
+        "id": "3908ab19c248673b",
+        "type": "ui_text_input",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "label": "Planned Study Time",
+        "tooltip": "",
+        "group": "5aafaad48c469381",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 940,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "206f71167416c0e1",
+        "type": "mqtt out",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "topic": "study/mode",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "90a3fcfe5dc19ac6",
+        "x": 730,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "3274ce117ac73e34",
+        "type": "ui_button",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "group": "a1f5e460c4818b5c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "start study",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "study/mode",
+        "topicType": "str",
+        "x": 550,
+        "y": 280,
+        "wires": [
+            [
+                "206f71167416c0e1"
+            ]
+        ]
+    },
+    {
+        "id": "2241416e5e08339c",
+        "type": "ui_text",
+        "z": "4c59e0a7bb62b38b",
+        "group": "5aafaad48c469381",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current Unit",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#2a7da7",
+        "x": 930,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "059f585aac749cc1",
+        "type": "function",
+        "z": "4c59e0a7bb62b38b",
+        "name": "function 2",
+        "func": "if (msg.payload === \"Present\") {\n    msg.payload = 100;\n} else {\n    msg.payload = 0;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 500,
+        "wires": [
+            [
+                "aba7bbee8c29859a"
+            ]
+        ]
+    },
+    {
+        "id": "535b5eeffe1f339e",
+        "type": "function",
+        "z": "4c59e0a7bb62b38b",
+        "name": "function 5",
+        "func": "if (msg.payload === \"Present\") {\n    flow.set(\"focusStatus\", \"Focused\");\n    msg.payload = \"Focused\";\n} else {\n    flow.set(\"focusStatus\", \"Not Focused\");\n    msg.payload = \"Not Focused\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 560,
+        "wires": [
+            [
+                "9bef6b401a2c0b8e"
+            ]
+        ]
+    },
+    {
+        "id": "c491b2b6d0af2f7a",
+        "type": "mqtt in",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "topic": "study/mode/status",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "90a3fcfe5dc19ac6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 550,
+        "y": 620,
+        "wires": [
+            [
+                "089c513375e0c3e9",
+                "13746b186890472a"
+            ]
+        ]
+    },
+    {
+        "id": "089c513375e0c3e9",
+        "type": "ui_text",
+        "z": "4c59e0a7bb62b38b",
+        "group": "5aafaad48c469381",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Study Mode",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#ec4141",
+        "x": 790,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "13746b186890472a",
+        "type": "function",
+        "z": "4c59e0a7bb62b38b",
+        "name": "function 6",
+        "func": "if (msg.payload === \"Study Mode ON\") {\n    msg.payload = \"ON\";\n} else {\n    msg.payload = \"OFF\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aace9e1aaada6511",
+        "type": "ui_text",
+        "z": "4c59e0a7bb62b38b",
+        "group": "7715557b2325720a",
+        "order": 1,
+        "width": "5",
+        "height": "1",
+        "name": "",
+        "label": "Unit Summary",
+        "format": "<pre style=\"font-size:16px;\">{{msg.payload}}</pre>",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": "16",
+        "color": "#283da4",
+        "x": 140,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "d6930da309a44ce5",
+        "type": "function",
+        "z": "4c59e0a7bb62b38b",
+        "name": "function 8",
+        "func": "let unitTimes = flow.get(\"unitTimes\") || {};\n\nlet summary = \"\";\n\nfor (let unit in unitTimes) {\n    if (unit === \"No Unit Selected\") continue;\n\n    let totalSeconds = unitTimes[unit];\n    let minutes = Math.floor(totalSeconds / 60);\n    let seconds = totalSeconds % 60;\n\n    summary += unit + \": \" + minutes + \" min \" + seconds + \" sec\\n\";\n}\n\nmsg.payload = summary || \"No units studied yet\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 80,
+        "y": 520,
+        "wires": [
+            [
+                "aace9e1aaada6511"
+            ]
+        ]
+    },
+    {
+        "id": "699578fd7636ef2f",
+        "type": "ui_button",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "group": "7715557b2325720a",
+        "order": 2,
+        "width": "10",
+        "height": "1",
+        "passthru": false,
+        "label": "RESET SUMMARY",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "str",
+        "x": 130,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "958429fabf6d9869",
+        "type": "function",
+        "z": "4c59e0a7bb62b38b",
+        "name": "function 7",
+        "func": "flow.set(\"unitTimes\", {});\n\nmsg.payload = \"No study sessions recorded\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 80,
+        "y": 380,
+        "wires": [
+            [
+                "699578fd7636ef2f"
+            ]
+        ]
+    },
+    {
+        "id": "57fe12894a36d348",
+        "type": "ui_text",
+        "z": "4c59e0a7bb62b38b",
+        "group": "8adb86f791382ae7",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Time Invested",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 420,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "7433efb2aa5b2fe9",
+        "type": "inject",
+        "z": "4c59e0a7bb62b38b",
+        "name": "",
+        "props": [
+            {
+                "p": "msg.payload",
+                "v": "tick",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 330,
+        "y": 300,
+        "wires": [
+            [
+                "135088413ae1d471",
+                "d6930da309a44ce5"
+            ]
+        ]
+    },
+    {
+        "id": "135088413ae1d471",
+        "type": "function",
+        "z": "4c59e0a7bb62b38b",
+        "name": "function 1",
+        "func": "let currentUnit = flow.get(\"currentUnit\") || \"No Unit Selected\";\nlet unitTimes = flow.get(\"unitTimes\") || {};\n\nif (!unitTimes[currentUnit]) {\n    unitTimes[currentUnit] = 0;\n}\n\nif (flow.get(\"focusStatus\") === \"Focused\") {\n    unitTimes[currentUnit] += 1;\n}\n\nflow.set(\"unitTimes\", unitTimes);\n\nlet totalSeconds = unitTimes[currentUnit];\nlet minutes = Math.floor(totalSeconds / 60);\nlet seconds = totalSeconds % 60;\n\nmsg.payload = currentUnit + \": \" + minutes + \" min \" + seconds + \" sec\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 380,
+        "wires": [
+            [
+                "57fe12894a36d348"
+            ]
+        ]
+    },
+    {
+        "id": "90a3fcfe5dc19ac6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "5aafaad48c469381",
+        "type": "ui_group",
+        "name": "Live Status",
+        "tab": "1ffa6bb0e9525df9",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8adb86f791382ae7",
+        "type": "ui_group",
+        "name": "Analytics",
+        "tab": "1ffa6bb0e9525df9",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a1f5e460c4818b5c",
+        "type": "ui_group",
+        "name": "Study Controls",
+        "tab": "1ffa6bb0e9525df9",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7715557b2325720a",
+        "type": "ui_group",
+        "name": "Study Summary",
+        "tab": "476b58c191b8eb8d",
+        "order": 4,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1ffa6bb0e9525df9",
+        "type": "ui_tab",
+        "name": "smart study system",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "476b58c191b8eb8d",
+        "type": "ui_tab",
+        "name": "Study Summary",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "936640a09752c576",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
